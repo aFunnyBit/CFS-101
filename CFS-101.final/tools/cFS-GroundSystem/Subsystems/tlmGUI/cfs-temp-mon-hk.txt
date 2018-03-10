@@ -1,0 +1,36 @@
+#
+# cfs-temp-mon-hk.txt
+#
+# This file should have the following comma delimited fields:
+#   1. Data item description
+#   2. Offset of data item in packet (in bytes)
+#      (Note: First data time should be at offset 12 since telemetry header is 12 bytes.)
+#   3. Size of data item (in bytes)
+#   4. Python data type of item (using Python struct library)
+#          c    char                  1 byte
+#          b    signed char           1 byte
+#          B    unsigned char         1 byte
+#          h    short                 2 bytes
+#          H    unsigned short        2 bytes
+#          i    int                   4 bytes
+#          I    unsigned int          4 bytes
+#          l    long                  4 bytes
+#          L    unsigned long         4 bytes
+#          q    long long             8 bytes
+#          Q    unsigned long long    8 bytes
+#          f    float                 4 bytes
+#          d    double                8 bytes
+#   5. Display type of item (currently Dec, Hex, Str, Enm)
+#   6. Display string for enumerated value 0 (or NULL if none)
+#   7. Display string for enumerated value 1 (or NULL if none)
+#   8. Display string for enumerated value 2 (or NULL if none)
+#   9. Display string for enumerated value 3 (or NULL if none)
+#
+#  Note(1): A line that begins with # is a comment
+#  Note(2): Remove any blank lines from the end of the file
+#
+Command Counter,  12, 1, B, Dec, NULL, NULL, NULL, NULL
+Cmd Err Counter,  13, 1, B, Dec, NULL, NULL, NULL, NULL
+Temp Value,      16, 4, i, Dec, NULL, NULL, NULL, NULL
+Temp Dir,        20, 2, h, Dec, NULL, NULL, NULL, NULL
+Temp Range,      22, 2, h, Dec, NULL, NULL, NULL, NULL
